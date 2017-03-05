@@ -811,7 +811,7 @@ SUPPORTED_SITE_LANGUAGES = [{
 }, {
     'id': 'en',
     'text': 'English'
-},{
+}, {
     'id': 'de',
     'text': 'Deutsch'
 }, {
