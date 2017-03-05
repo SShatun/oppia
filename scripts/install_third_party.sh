@@ -76,13 +76,13 @@ if [ ! "$NO_SKULPT" -a ! -d "$THIRD_PARTY_DIR/static/skulpt-0.10.0" ]; then
   cp -r $TOOLS_DIR/skulpt-0.10.0/skulpt/dist/* $THIRD_PARTY_DIR/static/skulpt-0.10.0
 fi
 
-# Checking if pip is installed. If you are having
-# trouble, please ensure that you have pip installed (see "Installing Oppia"
+# Checking if pip2 is installed. If you are having
+# trouble, please ensure that you have pip2 installed (see "Installing Oppia"
 # on the Oppia developers' wiki page).
-echo Checking if pip is installed on the local machine
-if ! type pip > /dev/null 2>&1 ; then
+echo Checking if pip2 is installed on the local machine
+if ! type pip2 > /dev/null 2>&1 ; then
     echo ""
-    echo "  Pip is required to install Oppia dependencies, but pip wasn't found"
+    echo "  pip2 is required to install Oppia dependencies, but pip2 wasn't found"
     echo "  on your local machine."
     echo ""
     echo "  Please see \"Installing Oppia\" on the Oppia developers' wiki page:"
@@ -93,23 +93,23 @@ if ! type pip > /dev/null 2>&1 ; then
       echo "    https://github.com/oppia/oppia/wiki/Installing-Oppia-%28Linux%29"
     fi
 
-    # If pip is not installed, quit.
+    # If pip2 is not installed, quit.
     exit 1
 fi
 
 # Note that numpy needs to be built after downloading.
-echo Checking if numpy is installed in $TOOLS_DIR/pip_packages
+echo Checking if numpy is installed in $TOOLS_DIR/pip2_packages
 if [ ! -d "$TOOLS_DIR/numpy-1.6.1" ]; then
   echo Installing numpy
 
-  pip install numpy==1.6.1 --target="$TOOLS_DIR/numpy-1.6.1"
+  pip2 install numpy==1.6.1 --target="$TOOLS_DIR/numpy-1.6.1"
 fi
 
-echo Checking if pylint is installed in $TOOLS_DIR/pip_packages
+echo Checking if pylint is installed in $TOOLS_DIR/pip2_packages
 if [ ! -d "$TOOLS_DIR/pylint-1.5.2" ]; then
   echo Installing Pylint
 
-  pip install pylint==1.5.2 --target="$TOOLS_DIR/pylint-1.5.2"
+  pip2 install pylint==1.5.2 --target="$TOOLS_DIR/pylint-1.5.2"
 fi
 
 # Install webtest.
@@ -123,18 +123,18 @@ if [ ! -d "$TOOLS_DIR/webtest-1.4.2" ]; then
 fi
 
 # Python API for browsermob-proxy.
-echo Checking if browsermob-proxy is installed in $TOOLS_DIR/pip_packages
+echo Checking if browsermob-proxy is installed in $TOOLS_DIR/pip2_packages
 if [ ! -d "$TOOLS_DIR/browsermob-proxy-0.7.1" ]; then
   echo Installing browsermob-proxy
 
-  pip install browsermob-proxy==0.7.1 --target="$TOOLS_DIR/browsermob-proxy-0.7.1"
+  pip2 install browsermob-proxy==0.7.1 --target="$TOOLS_DIR/browsermob-proxy-0.7.1"
 fi
 
-echo Checking if selenium is installed in $TOOLS_DIR/pip_packages
+echo Checking if selenium is installed in $TOOLS_DIR/pip2_packages
 if [ ! -d "$TOOLS_DIR/selenium-2.53.2" ]; then
   echo Installing selenium
 
-  pip install selenium==2.53.2 --target="$TOOLS_DIR/selenium-2.53.2"
+  pip2 install selenium==2.53.2 --target="$TOOLS_DIR/selenium-2.53.2"
 fi
 
 # install pre-push script

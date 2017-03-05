@@ -806,9 +806,12 @@ SUPPORTED_SITE_LANGUAGES = [{
     'id': 'id',
     'text': 'Bahasa Indonesia'
 }, {
+    'id': 'ru',
+    'text': 'Русский'
+}, {
     'id': 'en',
     'text': 'English'
-}, {
+},{
     'id': 'de',
     'text': 'Deutsch'
 }, {
