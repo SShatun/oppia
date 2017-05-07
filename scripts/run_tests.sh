@@ -46,10 +46,10 @@ source $(dirname $0)/setup.sh || exit 1
 source $(dirname $0)/setup_gae.sh || exit 1
 
 # Run frontend unit tests.
-# echo 'Running frontend unit tests'
-# source $(dirname $0)/run_frontend_tests.sh || exit 1
-# echo 'Frontend tests passed.'
-# echo ''
+echo 'Running frontend unit tests'
+source $(dirname $0)/run_frontend_tests.sh || exit 1
+echo 'Frontend tests passed.'
+echo ''
 
 # Run backend tests.
 echo 'Running backend tests'
@@ -58,8 +58,8 @@ echo 'Backend tests passed.'
 echo ''
 
 # Run end-to-end tests.
-# echo 'Running end-to-end tests'
-# source $(dirname $0)/run_e2e_tests.sh || exit 1
+echo 'Running end-to-end tests'
+source $(dirname $0)/run_e2e_tests.sh || exit 1
 
 echo ''
 echo 'SUCCESS    All frontend, backend and end-to-end tests passed!'
