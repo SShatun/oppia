@@ -111,17 +111,18 @@ oppia.controller('Signup', [
 
     $scope.submitPrerequisitesForm = function(
         agreedToTerms, username, canReceiveEmailUpdates) {
-      if (!agreedToTerms) {
-        alertsService.addWarning('I18N_SIGNUP_ERROR_MUST_AGREE_TO_TERMS');
-        return;
-      }
+      // if (!agreedToTerms) {
+      //   alertsService.addWarning('I18N_SIGNUP_ERROR_MUST_AGREE_TO_TERMS');
+      //   return;
+      // }
 
       if (!$scope.hasUsername && $scope.warningI18nCode) {
         return;
       }
 
       var requestParams = {
-        agreed_to_terms: agreedToTerms,
+        // agreed_to_terms: agreedToTerms,
+        agreed_to_terms: true,
         can_receive_email_updates: null
       };
       if (!$scope.hasUsername) {

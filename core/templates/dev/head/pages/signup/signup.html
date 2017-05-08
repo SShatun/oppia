@@ -98,8 +98,12 @@
 
         <br>
 
-        <button type="submit" class="btn btn-success protractor-test-register-user"
+<!--         <button type="submit" class="btn btn-success protractor-test-register-user"
                 ng-disabled="warningI18nCode || !hasAgreedToLatestTerms || submissionInProcess"
+                translate="I18N_SIGNUP_BUTTON_SUBMIT">
+        </button> -->
+        <button type="submit" class="btn btn-success protractor-test-register-user"
+                ng-disabled="warningI18nCode || submissionInProcess"
                 translate="I18N_SIGNUP_BUTTON_SUBMIT">
         </button>
       </form>
