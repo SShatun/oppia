@@ -94,7 +94,8 @@
 {% if SHOW_TRAINABLE_UNRESOLVED_ANSWERS %}
   <md-card style="margin: 20px 0px; padding: 0px;" ng-if="isCurrentInteractionTrainable()">
     <div ng-if="editabilityService.isEditableOutsideTutorialMode() && !isCurrentInteractionLinear()">
-      <button type="button" class="btn btn-default btn-lg oppia-add-response-button protractor-test-open-teach-modal" ng-click="openTeachOppiaModal()">
+      <button type="button" class="btn btn-default btn-lg oppia-add-response-button protractor-test-open-teach-modal" ng-click="openTeachOppiaModal()"
+      translate="I18N_EDITOR_RESPONSES_TEACH_OPPIA">
         + Teach Oppia
       </button>
     </div>
@@ -104,7 +105,8 @@
   <md-card style="margin: 0px; padding: 0px;">
 {% endif %}
     <div ng-if="editabilityService.isEditableOutsideTutorialMode() && !isCurrentInteractionLinear()">
-      <button type="button" class="btn btn-default btn-lg oppia-add-response-button protractor-test-open-add-response-modal" ng-click="openAddAnswerGroupModal()">
+      <button type="button" class="btn btn-default btn-lg oppia-add-response-button protractor-test-open-add-response-modal" ng-click="openAddAnswerGroupModal()"
+      translate="I18N_EDITOR_RESPONSES_ADD_NEW_RESPONSE">
         + Add New Oppia Response
       </button>
     </div>
@@ -113,7 +115,7 @@
 
 {% if SHOW_TRAINABLE_UNRESOLVED_ANSWERS %}
   <script type="text/ng-template" id="modals/teachOppia">
-    <div class="modal-header">
+    <div class="modal-header" translate="I18N_EDITOR_RESPONSES_ENTER_SAMPLE_ANSWER">
       <h3>Enter a Sample Answer</h3>
     </div>
 
@@ -129,7 +131,7 @@
           </form>
           <div ng-if="classification.answerGroupIndex === -1">
             <div>
-              <span><strong>If Oppia encounters the answer:</strong></span>
+              <span><strong translate="I18N_EDITOR_RESPONSES_IF_ANSWER">If Oppia encounters the answer:</strong></span>
             </div>
 
             <div>
@@ -140,7 +142,7 @@
             <br>
 
             <div>
-              <span><strong>it will reply with:</strong></span>
+              <span><strong translate="I18N_EDITOR_RESPONSES_REPLY">it will reply with:</strong></span>
             </div>
 
             <div>
@@ -151,14 +153,14 @@
             <br>
 
             <div>
-              <span><strong>and then direct the learner to: </strong></span>
+              <span><strong translate="I18N_EDITOR_RESPONSES_DIRECT">and then direct the learner to: </strong></span>
               <span angular-html-bind="trainingDataOutcomeDest"></span>
             </div>
 
             <br>
 
             <div>
-              <span><strong>This is due to a specific rule and therefore cannot be trained. If you do not think this is right, you should change the rule directly referring to this answer.</strong></span>
+              <span><strong translate="I18N_EDITOR_CANNOT_BE_TRAINED">This is due to a specific rule and therefore cannot be trained. If you do not think this is right, you should change the rule directly referring to this answer.</strong></span>
             </div>
           </div>
         </div>
@@ -172,14 +174,14 @@
 {% endif %}
 
 <script type="text/ng-template" id="modals/addAnswerGroup">
-  <div class="modal-header protractor-test-add-response-modal-header">
+  <div class="modal-header protractor-test-add-response-modal-header" translate="I18N_EDITOR_ADD_RESPONSE">
     <h3>Add Response</h3>
   </div>
 
   <div class="modal-body">
     <form name="addAnswerGroupForm.outcomeDetailsForm" class="form-inline protractor-test-add-response-details">
       <div class="oppia-rule-details-header">
-        <strong>If the learner's answer...</strong>
+        <strong translate="I18N_EDITOR_IF_LEARNERS_ANSWER">If the learner's answer...</strong>
       </div>
 
       <rule-editor rule="tmpRule" is-editable="editabilityService.isEditable()" is-editing-rule-inline="false">
@@ -195,9 +197,9 @@
             <div class="oppia-click-to-start-editing protractor-test-open-feedback-editor" ng-click="openFeedbackEditor()">
               <i class="material-icons oppia-editor-edit-icon pull-right" title="Edit Feedback">&#xE254;</i>
             </div>
-            <strong>Oppia tells the learner...</strong>
+            <strong translate="I18N_EDITOR_RESPONSES_REPLY">Oppia tells the learner...</strong>
             <div style="position: relative;">
-              <span style="color: #888">
+              <span style="color: #888" >
                 <em>Nothing</em>
               </span>
             </div>
@@ -219,16 +221,16 @@
   <div class="modal-footer">
     <button class="btn btn-default protractor-test-close-add-response-modal" ng-click="cancel()">Cancel</button>
     <button class="btn btn-success protractor-test-add-new-response" ng-click="saveResponse(false)" ng-disabled="addAnswerGroupForm.outcomeDetailsForm.$invalid || isSelfLoopWithNoFeedback(tmpOutcome)">Save Response</button>
-    <button class="btn btn-success" ng-click="saveResponse(true)" ng-disabled="addAnswerGroupForm.outcomeDetailsForm.$invalid || isSelfLoopWithNoFeedback(tmpOutcome)">Save and Add Another</button>
+    <button class="btn btn-success" ng-click="saveResponse(true)" ng-disabled="addAnswerGroupForm.outcomeDetailsForm.$invalid || isSelfLoopWithNoFeedback(tmpOutcome)" translate="I18N_EDITOR_RESPONSES_SAVE_AND_ADD">Save and Add Another</button>
   </div>
 </script>
 
 <script type="text/ng-template" id="modals/deleteAnswerGroup">
   <div class="modal-header">
-    <h3>Delete Response</h3>
+    <h3  translate="I18N_EDITOR_RESPONSES_DELETE_RESPONSE">Delete Response</h3>
   </div>
 
-  <div class="modal-body">
+  <div class="modal-body" translate="I18N_EDITOR_RESPONSES_DELETE_WARNING">
     <p>
       Are you sure you want to delete this response?
     </p>
@@ -237,7 +239,8 @@
   <div class="modal-footer">
     <button class="btn btn-default" ng-click="cancel()">Cancel</button>
     <button class="btn btn-danger protractor-test-confirm-delete-response"
-            ng-click="reallyDelete()">
+            ng-click="reallyDelete()"
+            translate="I18N_EDITOR_RESPONSES_DELETE_RESPONSE">
       Delete Response
     </button>
   </div>

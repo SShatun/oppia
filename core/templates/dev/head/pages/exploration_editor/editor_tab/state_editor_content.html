@@ -6,10 +6,10 @@
        title="Edit Card Content">&#xE254;
     </i>
     <div class="oppia-state-content-display oppia-transition-200" ng-class="{'oppia-prevent-selection': editabilityService.isEditable()}" title="Card Content">
-      <span ng-show="content[0].value == '' && isCurrentStateInitialState()" class="oppia-placeholder">
+      <span ng-show="content[0].value == '' && isCurrentStateInitialState()" class="oppia-placeholder" translate="I18N_STATE_EDITOR_CONTENT_FIRST_CARD">
         This is the first card of your exploration. Use this space to introduce your topic and engage the learner, then ask them a question.
       </span>
-      <span ng-show="content[0].value == '' && !isCurrentStateInitialState()" class="oppia-placeholder">
+      <span ng-show="content[0].value == '' && !isCurrentStateInitialState()" class="oppia-placeholder" translate="I18N_STATE_EDITOR_CONTENT_SECOND">
         You can speak to the learner here, then ask them a question.
       </span>
       <span angular-html-bind="content[0].value" class="oppia-state-content-display-html protractor-test-state-content-display"></span>
@@ -23,8 +23,8 @@
   <schema-based-editor schema="STATE_CONTENT_SCHEMA" local-value="content[0].value">
   </schema-based-editor>
   <div style="margin-top: 2px;">
-    <button type="button" class="btn btn-success oppia-save-state-item-button protractor-test-save-state-content pull-right" ng-click="onSaveContentButtonClicked()">Save Content</button>
-    <button type="button" class="btn btn-default pull-right" ng-click="cancelEdit()">Cancel</button>
+    <button type="button" class="btn btn-success oppia-save-state-item-button protractor-test-save-state-content pull-right" ng-click="onSaveContentButtonClicked()" translate="I18N_STATE_EDITOR_CONTENT_SAVE_CONTENT">Save Content</button>
+    <button type="button" class="btn btn-default pull-right" ng-click="cancelEdit()" translate="I18N_STATE_EDITOR_CONTENT_CANCEL">Cancel</button>
     <div style="clear: both;"></div>
   </div>
 </div>

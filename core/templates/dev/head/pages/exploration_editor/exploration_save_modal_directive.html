@@ -1,19 +1,19 @@
 <script type="text/ng-template" id="modals/saveExploration">
   <div class="modal-header">
     <h3>
-      <span ng-if="isExplorationPrivate">Save Draft</span>
-      <span ng-if="!isExplorationPrivate">Publish Changes</span>
+      <span ng-if="isExplorationPrivate" translate="I18N_EXPLORATION_SAVE_DRAFT">Save Draft</span>
+      <span ng-if="!isExplorationPrivate" translate="I18N_EXPLORATION_PUBLISH_CHANGES">Publish Changes</span>
     </h3>
   </div>
   <div class="modal-body oppia-long-text">
     <p>
-      <span ng-if="isExplorationPrivate">(Optional)</span>
+      <span ng-if="isExplorationPrivate" translate="I18N_EXPLORATION_OPTIONAL">(Optional)</span>
       Please enter a brief description of what you have changed:
       <textarea rows="3" cols="50" ng-model="commitMessage" focus-on="saveChangesModalOpened" class="protractor-test-commit-message-input" autofocus></textarea>
     </p>
     <button class="btn btn-default" ng-click="onClickToggleDiffButton()">
-      <span ng-if="!showDiff">Show Changes</span>
-      <span ng-if="showDiff">Hide Changes</span>
+      <span ng-if="!showDiff" translate="I18N_EXPLORATION_SHOW_CHANGES">Show Changes</span>
+      <span ng-if="showDiff" translate="I18N_EXPLORATION_HIDE_CHANGES">Hide Changes</span>
     </button>
 
     <version-diff-visualization ng-if="showDiff" diff-data="diffData"
@@ -24,8 +24,8 @@
   <div class="modal-footer">
     <button class="btn btn-default" ng-click="cancel()">Cancel</button>
     <button class="btn btn-success protractor-test-close-save-modal" ng-disabled="!isExplorationPrivate && !commitMessage" ng-click="save(commitMessage)">
-      <span ng-if="isExplorationPrivate">Save Draft</span>
-      <span ng-if="!isExplorationPrivate">Publish Changes</span>
+      <span ng-if="isExplorationPrivate" translate="I18N_EXPLORATION_SAVE_DRAFT">Save Draft</span>
+      <span ng-if="!isExplorationPrivate" translate="I18N_EXPLORATION_PUBLISH_CHANGES">Publish Changes</span>
     </button>
   </div>
 </script>

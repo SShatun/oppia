@@ -31,12 +31,12 @@ oppia.constant('EXPLORATIONS_SORT_BY_KEYS', {
 });
 
 oppia.constant('HUMAN_READABLE_EXPLORATIONS_SORT_BY_KEYS', {
-  TITLE: 'Title',
-  RATING: 'Average Rating',
-  NUM_VIEWS: 'Total Plays',
-  OPEN_FEEDBACK: 'Open Feedback',
-  UNRESOLVED_ANSWERS: 'Unresolved Answers',
-  LAST_UPDATED: 'Last Updated'
+  TITLE: 'Заголовок',
+  RATING: 'Средний рейтинг',
+  NUM_VIEWS: 'Просмоторы',
+  OPEN_FEEDBACK: 'Отзывы',
+  UNRESOLVED_ANSWERS: 'Неотвеченные вопросы',
+  LAST_UPDATED: 'Последние изменения'
 });
 
 oppia.constant('SUBSCRIPTION_SORT_BY_KEYS', {

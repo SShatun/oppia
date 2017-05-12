@@ -2,23 +2,23 @@
   <div class="modal-body oppia-long-text protractor-test-welcome-modal">
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
-        <h1 class="oppia-welcome-modal-h1">Welcome!</h1>
-        <p class="oppia-welcome-modal-p">
+        <h1 class="oppia-welcome-modal-h1" translate="I18N_WELCOME_MODAL_DIRECTIVE_TITLE">Welcome!</h1>
+        <p class="oppia-welcome-modal-p" translate="I18N_WELCOME_MODAL_DIRECTIVE_TEXT">
           It looks like you're new to creating explorations.
-        </p>
-        <p class="oppia-welcome-modal-p">
           Would you like an introduction to creating in Oppia?
         </p>
 
         <button type="button"
                 class="btn oppia-welcome-modal-button oppia-transition-200 protractor-test-start-tutorial"
-                ng-click="beginTutorial()">
+                ng-click="beginTutorial()"
+                translate="I18N_WELCOME_MODAL_DIRECTIVE_YES_BUTTON">
           Yes, please!
         </button>
 
         <button type="button"
                 class="btn oppia-welcome-modal-button oppia-transition-200 protractor-test-dismiss-welcome-modal"
-                ng-click="cancel()">
+                ng-click="cancel()"
+                translate="I18N_WELCOME_MODAL_DIRECTIVE_NO_BUTTON">
           Nope, take me to the editor
         </button>
       </div>
