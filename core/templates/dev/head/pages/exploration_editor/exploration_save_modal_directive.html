@@ -22,7 +22,7 @@
     </version-diff-visualization>
   </div>
   <div class="modal-footer">
-    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-default" ng-click="cancel()" translate="I18N_STATE_EDITOR_CONTENT_CANCEL">Cancel</button>
     <button class="btn btn-success protractor-test-close-save-modal" ng-disabled="!isExplorationPrivate && !commitMessage" ng-click="save(commitMessage)">
       <span ng-if="isExplorationPrivate" translate="I18N_EXPLORATION_SAVE_DRAFT">Save Draft</span>
       <span ng-if="!isExplorationPrivate" translate="I18N_EXPLORATION_PUBLISH_CHANGES">Publish Changes</span>

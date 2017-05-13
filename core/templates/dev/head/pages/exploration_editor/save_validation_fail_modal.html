@@ -1,9 +1,9 @@
 <script type="text/ng-template" id="modals/saveValidationFail">
-  <div class="modal-header">
+  <div class="modal-header" translate="I18N_SAVE_VALIDATION_FAIL_MODAL_ERROR">
     <h3>Error Saving Exploration</h3>
   </div>
 
-  <div class="modal-body">
+  <div class="modal-body" translate="I18N_SAVE_VALIDATION_FAIL_MODAL_SORRY">
     <p>
       Sorry, an unexpected error occurred. Please refresh the page to
       return to the most recent draft of your exploration.
@@ -11,7 +11,7 @@
   </div>
 
   <div class="modal-footer">
-    <button class="btn btn-default" ng-click="closeAndRefresh()">
+    <button class="btn btn-default" ng-click="closeAndRefresh()" translate="I18N_SAVE_VALIDATION_FAIL_MODAL_CLOSE_REFRESH">
       Close and Refresh
     </button>
   </div>

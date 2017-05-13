@@ -35,7 +35,8 @@ oppia.factory('ExplorationCreationService', [
 
         explorationCreationInProgress = true;
         alertsService.clearWarnings();
-        $rootScope.loadingMessage = 'Creating exploration';
+        $rootScope.loadingMessage = 'Создание исследования';
+        // $rootScope.loadingMessage = 'Creating exploration';
 
         $http.post('/contributehandler/create_new', {
         }).then(function(response) {
@@ -83,7 +84,7 @@ oppia.factory('ExplorationCreationService', [
         }).result.then(function(result) {
           var yamlFile = result.yamlFile;
 
-          $rootScope.loadingMessage = 'Creating exploration';
+          $rootScope.loadingMessage = 'Создание исследования';
 
           var form = new FormData();
           form.append('yaml_file', yamlFile);

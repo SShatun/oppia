@@ -29,7 +29,7 @@ oppia.controller('Profile', [
       return oppiaDatetimeFormatter.getLocaleDateString(millisSinceEpoch);
     };
 
-    $rootScope.loadingMessage = 'Loading';
+    $rootScope.loadingMessage = 'Загрузка';
     $http.get(profileDataUrl).then(function(response) {
       var data = response.data;
       $rootScope.loadingMessage = '';

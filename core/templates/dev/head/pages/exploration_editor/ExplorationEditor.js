@@ -59,7 +59,7 @@ oppia.controller('ExplorationEditor', [
     /**********************************************************
      * Called on initial load of the exploration editor page.
      *********************************************************/
-    $rootScope.loadingMessage = 'Loading';
+    $rootScope.loadingMessage = 'Загрузка';
 
     $scope.explorationId = explorationContextService.getExplorationId();
     $scope.explorationUrl = '/create/' + $scope.explorationId;

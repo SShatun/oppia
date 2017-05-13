@@ -1,7 +1,7 @@
 <script type="text/ng-template" id="inline/editor_navigation_directive">
   <ul class="nav navbar-nav oppia-navbar-nav pull-right ng-cloak" style="margin-left: 20px;">
     <li ng-class="{'active': getTabStatuses().active === 'main', 'dropdown': countWarnings()}">
-      <a href="#" tooltip="Editor" tooltip-placement="<[countWarnings() ? 'left' : 'bottom']>" ng-click="selectMainTab()"
+      <a href="#" tooltip="Редактор" tooltip-placement="<[countWarnings() ? 'left' : 'bottom']>" ng-click="selectMainTab()"
          class="oppia-editor-navbar-tab-anchor protractor-test-main-tab">
         <i class="material-icons">&#xE254;</i>
       </a>
@@ -11,7 +11,7 @@
         </span>
       </div>
       <ul class="dropdown-menu oppia-editor-warnings-box">
-        <span class="oppia-editor-warnings-header">Warnings</span>
+        <span class="oppia-editor-warnings-header" translate="I18N_EDITOR_NAVIGATION_DIRECTIVE_WARNINGS">Warnings</span>
         <li class="oppia-editor-warnings-text" ng-repeat="warning in getWarnings() track by $index">
           <hr class="oppia-editor-warnings-separator">
           <span ng-if="warning.type === 'critical'">
@@ -26,7 +26,7 @@
 
     {% if username %}
       <li id="tutorialPreviewTab" ng-class="{'active': getTabStatuses().active === 'preview'}">
-        <a href="#" tooltip="Preview" tooltip-placement="bottom" ng-click="selectPreviewTab()"
+        <a href="#" tooltip=Просмотр" tooltip-placement="bottom" ng-click="selectPreviewTab()"
            class="oppia-editor-navbar-tab-anchor protractor-test-preview-tab">
           <i class="material-icons">&#xE037;</i>
         </a>
@@ -34,7 +34,7 @@
     {% endif %}
 
     <li ng-if="isLargeScreen" ng-class="{'active': getTabStatuses().active === 'settings'}">
-      <a href="#" tooltip="Settings" tooltip-placement="bottom" ng-click="selectSettingsTab()"
+      <a href="#" tooltip="Настройки" tooltip-placement="bottom" ng-click="selectSettingsTab()"
          class="oppia-editor-navbar-tab-anchor protractor-test-settings-tab">
         <i class="material-icons">&#xE8B8;</i>
       </a>
@@ -42,7 +42,7 @@
 
     {% if username %}
       <li ng-if="isLargeScreen" ng-class="{'active': getTabStatuses().active === 'stats'}">
-        <a href="#" tooltip="Statistics" tooltip-placement="bottom" ng-click="selectStatsTab()"
+        <a href="#" tooltip="Статистика" tooltip-placement="bottom" ng-click="selectStatsTab()"
            class="oppia-editor-navbar-tab-anchor">
           <i class="material-icons">&#xE24B;</i>
         </a>
@@ -50,7 +50,7 @@
     {% endif %}
 
     <li ng-if="isLargeScreen" ng-class="{'active': getTabStatuses().active === 'history'}">
-      <a href="#" tooltip="History" tooltip-placement="bottom" ng-click="selectHistoryTab()"
+      <a href="#" tooltip="История" tooltip-placement="bottom" ng-click="selectHistoryTab()"
          disabled="explorationRightsService.isCloned()"
          class="oppia-editor-navbar-tab-anchor protractor-test-history-tab">
         <i class="material-icons">&#xE192;</i>
@@ -58,7 +58,7 @@
     </li>
 
     <li ng-if="isLargeScreen" ng-class="{'active': getTabStatuses().active === 'feedback'}" ng-click="selectFeedbackTab()">
-      <a href="#" tooltip="Feedback" tooltip-placement="bottom"
+      <a href="#" tooltip="Отзывы" tooltip-placement="bottom"
          class="oppia-editor-navbar-tab-anchor protractor-test-feedback-tab">
         <i class="material-icons">&#xE87F;</i>
       </a>
@@ -73,7 +73,7 @@
       <li ng-if="isLargeScreen" class="dropdown" popover-is-open="postTutorialHelpPopoverIsShown"
           popover-placement="bottom" popover-trigger="none"
           popover="To get help in the future, click here!">
-        <a href="#" tooltip="Help" tooltip-placement="bottom"
+        <a href="#" tooltip="Помощь" tooltip-placement="bottom"
            class="oppia-editor-navbar-tab-anchor" ng-click="showUserHelpModal()">
           <i class="material-icons">&#xE887;</i>
         </a>

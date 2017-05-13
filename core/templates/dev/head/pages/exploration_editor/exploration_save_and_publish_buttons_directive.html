@@ -10,14 +10,14 @@
           <span ng-if="!publishIsInProcess">
             <i class="material-icons md-18 md-dark oppia-save-publish-button-icon"
                alt="Publish to Oppia Library">&#xE2C3;</i>
-            <span class="oppia-save-publish-button-label">Publish</span>
+            <span class="oppia-save-publish-button-label" translate="I18N_COLLECTION_EDITOR_NAVBAR_DIRECTIVE_PUBLISH">Publish</span>
           </span>
           <span ng-if="publishIsInProcess">
             <i class="oppia-save-publish-loading oppia-save-publish-button-icon"
                alt="Publish to Oppia Library">
               <loading-dots ng-show="loadingDotsAreShown"></loading-dots>
             </i>
-            <span class="oppia-save-publish-button-label">
+            <span class="oppia-save-publish-button-label" translate="I18N_COLLECTION_EDITOR_NAVBAR_DIRECTIVE_PUBLISHING">
               Publishing
               <loading-dots ng-show="loadingDotsAreShown"></loading-dots>
             </span>
@@ -32,23 +32,23 @@
         <button id="tutorialSaveButton" class="btn btn-default oppia-save-draft-button protractor-test-save-changes" ng-class="{'btn-success': isExplorationSaveable(), 'oppia-save-draft-button-padding': getChangeListLength() && !isPrivate()}" ng-click="saveChanges()" ng-disabled="!isExplorationSaveable()">
           <span ng-if="!saveIsInProcess">
             <span ng-if="isPrivate()">
-              <i class="material-icons md-18 md-dark oppia-save-publish-button-icon"
+              <i class="material-icons md-18 md-dark oppia-save-publish-button-icon" translate="I18N_EXPLORATION_SAVE_AND_PUBLISH_BUTTONS_DIRECTIVE_SAVE_DRAFT"
                  alt="Save Draft">&#xE161;</i>
-              <span class="oppia-save-publish-button-label">Save Draft</span>
+              <span class="oppia-save-publish-button-label" translate="I18N_EXPLORATION_SAVE_AND_PUBLISH_BUTTONS_DIRECTIVE_SAVE_DRAFT">Save Draft</span>
               <span class="hidden-sm hidden-xs" ng-if="getChangeListLength()" style="opacity: 0.5">(<[getChangeListLength()]>)</span>
             </span>
             <span ng-if="!isPrivate()" title="Publish Changes">
               <i class="material-icons md-18 md-dark oppia-save-publish-button-icon"
                  alt="Publish Changes">&#xE2C3;</i>
-              <span class="oppia-save-publish-button-label">Publish Changes</span>
+              <span class="oppia-save-publish-button-label" translate="I18N_EXPLORATION_PUBLISH_CHANGES">Publish Changes</span>
               <span class="hidden-sm hidden-xs" ng-if="getChangeListLength()" style="opacity: 0.5">(<[getChangeListLength()]>)</span>
             </span>
           </span>
           <span ng-if="saveIsInProcess">
-            <span ng-if="isPrivate()" class="oppia-save-publish-button-label">
+            <span ng-if="isPrivate()" class="oppia-save-publish-button-label" translate="I18N_COLLECTION_EDITOR_NAVBAR_DIRECTIVE_SAVING">
               Saving
             </span>
-            <span ng-if="!isPrivate()" class="oppia-save-publish-button-label">
+            <span ng-if="!isPrivate()" class="oppia-save-publish-button-label" translate="I18N_COLLECTION_EDITOR_NAVBAR_DIRECTIVE_PUBLISHING">
               Publishing
             </span>
             <loading-dots ng-show="loadingDotsAreShown"></loading-dots>
@@ -59,7 +59,7 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu" style="min-width: 120px; right: inherit;" ng-style="{ width: getChangeListLength() && !isPrivate() ? '150px' : '120px' }">
-          <li><a ng-click="discardChanges()" ng-class="{'oppia-disabled-link': !getChangeListLength()}" class="protractor-test-discard-changes" title="Discard all pending changes.">Discard Draft</a></li>
+          <li><a ng-click="discardChanges()" ng-class="{'oppia-disabled-link': !getChangeListLength()}" class="protractor-test-discard-changes" title="Discard all pending changes." translate="I18N_EXPLORATION_SAVE_AND_PUBLISH_BUTTONS_DIRECTIVE_DISCARD_DRAFT">Discard Draft</a></li>
         </ul>
       </div>
     </li>

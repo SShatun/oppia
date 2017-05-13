@@ -1,35 +1,35 @@
 <div ng-controller="SettingsTab">
   <md-card class="oppia-editor-card">
-    <h3>Basic Settings</h3>
+    <h3 translate="I18N_SETTINGS_TAB_BASIC_SETTINGS">Basic Settings</h3>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div ng-if="editabilityService.isEditable()">
           <div role="form" class="form-horizontal">
             <div class="form-group" ng-class="{'has-error': !explorationTitleService.displayed}">
-              <label for="explorationTitle" class="col-lg-2 col-md-2 col-sm-2">Title</label>
+              <label for="explorationTitle" class="col-lg-2 col-md-2 col-sm-2" translate="I18N_SETTINGS_TAB_TITLE">Title</label>
               <div class="col-lg-10 col-md-10 col-sm-10">
-                <input id="explorationTitle" type="text" class="form-control protractor-test-exploration-title-input" ng-model="explorationTitleService.displayed" ng-blur="saveExplorationTitle()" placeholder="Choose a title for your exploration." focus-on="<[::EXPLORATION_TITLE_INPUT_FOCUS_LABEL]>" maxlength="40">
-                <span class="help-block" style="font-size: smaller">
+                <input id="explorationTitle" type="text"  class="form-control protractor-test-exploration-title-input" ng-model="explorationTitleService.displayed" ng-blur="saveExplorationTitle()" placeholder="Выберите заголовок для Вашего исследования" focus-on="<[::EXPLORATION_TITLE_INPUT_FOCUS_LABEL]>" maxlength="40">
+                <span class="help-block" style="font-size: smaller" translate="I18N_SETTINGS_TAB_SUMMARY">
                   <em>Please use at most 40 characters, so that this fits in the summary card.</em>
                 </span>
               </div>
             </div>
             <div class="form-group" ng-class="{'has-error': !explorationObjectiveService.displayed || explorationObjectiveService.displayed.length < 15}">
-              <label for="explorationObjective" class="col-lg-2 col-md-2 col-sm-2">Goal</label>
+              <label for="explorationObjective" class="col-lg-2 col-md-2 col-sm-2" translate="I18N_SETTINGS_TAB_GOAL">Goal</label>
               <div class="col-lg-10 col-md-10 col-sm-10">
                 <input id="explorationObjective" type="text"
                        class="form-control protractor-test-exploration-objective-input"
                        ng-model="explorationObjectiveService.displayed"
-                       ng-blur="saveExplorationObjective()" placeholder="Learn how to ...">
-                <span class="help-block" style="font-size: smaller">
+                       ng-blur="saveExplorationObjective()" placeholder="Учит как ...">
+                <span class="help-block" style="font-size: smaller" translate="I18N_SETTINGS_TAB_GOAL_SUBTEXT_ONE">
                   What does this exploration help people to do?
-                  <span ng-if="!explorationObjectiveService.displayed || explorationObjectiveService.displayed.length < 15">Please provide a complete, descriptive sentence.</span>
+                  <span ng-if="!explorationObjectiveService.displayed || explorationObjectiveService.displayed.length < 15" translate="I18N_SETTINGS_TAB_GOAL_SUBTEXT_TWO">Please provide a complete, descriptive sentence.</span>
                 </span>
               </div>
             </div>
 
             <div class="form-group" ng-class="{'has-error': !explorationCategoryService.displayed}">
-              <label for="explorationCategory" class="col-lg-2 col-md-2 col-sm-2">Category</label>
+              <label for="explorationCategory" class="col-lg-2 col-md-2 col-sm-2" translate="I18N_SETTINGS_TAB_CATEGORY">Category</label>
               <div class="col-lg-10 col-md-10 col-sm-10">
                 <div ng-if="hasPageLoaded">
                   <select2-dropdown id="explorationCategory"
@@ -47,41 +47,41 @@
             </div>
 
             <div class="form-group">
-              <label for="explorationLanguageCode" class="col-lg-2 col-md-2 col-sm-2">Language</label>
+              <label for="explorationLanguageCode" class="col-lg-2 col-md-2 col-sm-2" translate="I18N_SETTINGS_TAB_LANGUAGE">Language</label>
               <div class="col-lg-10 col-md-10 col-sm-10">
                 <select id="explorationLanguageCode" class="form-control protractor-test-exploration-language-select" ng-model="explorationLanguageCodeService.displayed" ng-change="saveExplorationLanguageCode()" ng-options="lc.code as lc.description for lc in explorationLanguageCodeService.getAllLanguageCodes()">
                 </select>
-                <span class="help-block" style="font-size: smaller">
+<!--                 <span class="help-block" style="font-size: smaller">
                   <em>
                     Don't see the language you want? <a href="https://github.com/oppia/oppia/issues/new?title=Please%20add%20a%20new%20language%20choice%20to%20the%20exploration%20settings%20tab&body=Please%20add%20the%20language%20choice%20%7B%7BYOUR_LANGUAGE_HERE%7D%7D%20to%20the%20exploration%20settings%20tab.%0A%0AHere%20is%20a%20link%20to%20an%20exploration%20that%20uses%20it:%20%7B%7BINSERT_LINK_HERE%7D%7D" target="_blank">Tell us.</a>
                   </em>
-                </span>
+                </span> -->
               </div>
             </div>
             <div class="form-group">
-              <label for="explorationInitStateName" class="col-lg-2 col-md-2 col-sm-2">Name of first card</label>
+              <label for="explorationInitStateName" class="col-lg-2 col-md-2 col-sm-2" translate="I18N_SETTINGS_TAB_FIRST_CARD_NAME">Name of first card</label>
               <div class="col-lg-10 col-md-10 col-sm-10">
                 <select id="explorationInitStateName" class="form-control protractor-test-initial-state-select" ng-model="explorationInitStateNameService.displayed" ng-change="saveExplorationInitStateName()" ng-options="name as name for name in stateNames track by name">
                 </select>
-                <span class="help-block" style="font-size: smaller">
+                <span class="help-block" style="font-size: smaller" translate="I18N_SETTINGS_TAB_FIRST_CARD_SUBTEXT">
                   <em>This is the first card the learner sees when playing your exploration.</em>
                 </span>
               </div>
             </div>
             <div class="form-group">
-              <label for="explorationTags" class="col-lg-2 col-md-2 col-sm-2">Tags</label>
+              <label for="explorationTags" class="col-lg-2 col-md-2 col-sm-2" translate="I18N_SETTINGS_TAB_TAGS">Tags</label>
               <div class="col-lg-10 col-md-10 col-sm-10">
                 <div ng-if="hasPageLoaded">
                   <select2-dropdown
                     item="$parent.explorationTagsService.displayed"
                     tag-mode="true" allow-multiple-choices="true"
-                    invalid-search-term-message="Add a new tag (using lowercase letters and spaces)..."
+                    invalid-search-term-message="Добавить новый тег (используя прописные буквы и пробелы) ..."
                     new-choice-regex="<[::TAG_REGEX]>" width="100%"
-                    placeholder="Skills, concepts, topics, ..."
+                    placeholder="Навыки, концепции, темы, ..."
                     on-selection-change="saveExplorationTags()">
                   </select2-dropdown>
                 </div>
-                <span class="help-block" style="font-size: smaller">
+                <span class="help-block" style="font-size: smaller" translate="I18N_SETTINGS_TAB_TAGS_SUBTEXT">
                   <em>Tags help learners discover your exploration when searching.</em>
                 </span>
               </div>
@@ -152,23 +152,23 @@
   </md-card>
 
   <md-card class="oppia-editor-card" ng-if="editabilityService.isEditable()">
-    <h3>Advanced Features</h3>
+    <h3 translate="I18N_SETTINGS_TAB_ADVANCED_FEATURES"> Advanced Features</h3>
     <div class="row">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div role="form" class="form-horizontal">
-            <label for="enableFallbacks" class="col-lg-2 col-md-2 col-sm-2">
+            <label for="enableFallbacks" class="col-lg-2 col-md-2 col-sm-2" translate="I18N_SETTINGS_TAB_FALLBACKS">
               Fallbacks
             </label>
             <span class="col-lg-2 col-md-2 col-sm-2">
-              <button type="button" class="btn btn-default protractor-test-enable-fallbacks" ng-click="enableFallbacks()" ng-if="!areFallbacksEnabled()">
+              <button type="button" class="btn btn-default protractor-test-enable-fallbacks" ng-click="enableFallbacks()" ng-if="!areFallbacksEnabled()" translate="I18N_SETTINGS_TAB_ENABLE">
                 Enable
               </button>
-              <span ng-if="areFallbacksEnabled()">
+              <span ng-if="areFallbacksEnabled()" translate="I18N_SETTINGS_TAB_ENABLED">
                 Enabled
               </span>
             </span>
-            <span class="col-lg-8 col-md-8 col-sm-8 help-block" style="font-size: smaller;">
+            <span class="col-lg-8 col-md-8 col-sm-8 help-block" style="font-size: smaller;" translate="I18N_SETTINGS_TAB_FALLBACKS_SUBTEXT">
               Special conditions you can trigger if a learner looks stuck, e.g. if they get a question wrong many times.
             </span>
           </div>
@@ -178,18 +178,18 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div role="form" class="form-horizontal">
-            <label for="enableGadgets" class="col-lg-2 col-md-2 col-sm-2">
+            <label for="enableGadgets" class="col-lg-2 col-md-2 col-sm-2" translate="I18N_SETTINGS_TAB_GADGETS">
               Gadgets
             </label>
             <span class="col-lg-2 col-md-2 col-sm-2">
-              <button type="button" class="btn btn-default protractor-test-enable-gadgets" ng-click="enableGadgets()" ng-if="!areGadgetsEnabled()">
+              <button type="button" class="btn btn-default protractor-test-enable-gadgets" ng-click="enableGadgets()" ng-if="!areGadgetsEnabled()" translate="I18N_SETTINGS_TAB_ENABLE">
                 Enable
               </button>
-              <span ng-if="areGadgetsEnabled()">
+              <span ng-if="areGadgetsEnabled()" translate="I18N_SETTINGS_TAB_ENABLED">
                 Enabled
               </span>
             </span>
-            <span class="col-lg-8 col-md-8 col-sm-8 help-block" style="font-size: smaller;">
+            <span class="col-lg-8 col-md-8 col-sm-8 help-block" style="font-size: smaller;" translate="I18N_SETTINGS_TAB_GADGETS_SUBTEXT">
               Customizable components that persist throughout an exploration.
             </span>
           </div>
@@ -199,19 +199,19 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div role="form" class="form-horizontal">
-            <label for="enableParameters" class="col-lg-2 col-md-2 col-sm-2">
+            <label for="enableParameters" class="col-lg-2 col-md-2 col-sm-2" translate="I18N_SETTINGS_TAB_PARAMETERS">
               Parameters
             </label>
             <span class="col-lg-2 col-md-2 col-sm-2">
-              <button type="button" class="btn btn-default protractor-test-enable-parameters" ng-click="enableParameters()" ng-if="!areParametersEnabled()">
+              <button type="button" class="btn btn-default protractor-test-enable-parameters" ng-click="enableParameters()" ng-if="!areParametersEnabled()" translate="I18N_SETTINGS_TAB_ENABLE">
                 Enable
               </button>
-              <span ng-if="areParametersEnabled()">
+              <span ng-if="areParametersEnabled()" translate="I18N_SETTINGS_TAB_ENABLED">
                 Enabled
               </span>
             </span>
-            <span class="col-lg-8 col-md-8 col-sm-8 help-block" style="font-size: smaller;">
-              Values that change as the learner moves between cards (<a href="http://oppia.github.io/#/Parameters" target="_blank">more info</a>).
+            <span class="col-lg-8 col-md-8 col-sm-8 help-block" style="font-size: smaller;" translate="I18N_SETTINGS_TAB_PARAMETERS_SUBTEXT">
+              Values that change as the learner moves between cards <!-- (<a href="http://oppia.github.io/#/Parameters" target="_blank">more info</a>). -->
             </span>
           </div>
         </div>
@@ -223,9 +223,9 @@
     <div ng-if="explorationRightsService.ownerNames.length > 0 && !explorationRightsService.isCloned()">
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5">
-          <h3>Roles</h3>
+          <h3 translate="I18N_SETTINGS_TAB_ROLES">Roles</h3>
           <div ng-show="explorationRightsService.ownerNames.length > 0">
-            <strong>Managers</strong>
+            <strong translate="I18N_SETTINGS_TAB_MANAGERS">Managers</strong>
             <ul>
               <li ng-repeat="ownerName in explorationRightsService.ownerNames track by $index">
                 <[ownerName]>
@@ -234,7 +234,7 @@
           </div>
 
           <div ng-show="explorationRightsService.editorNames.length > 0">
-            <strong>Collaborators</strong>
+            <strong translate="I18N_SETTINGS_TAB_COLLABORATORS">Collaborators</strong>
             <ul>
               <li ng-repeat="editorName in explorationRightsService.editorNames track by $index">
                 <[editorName]>
@@ -243,7 +243,7 @@
           </div>
 
           <div ng-show="explorationRightsService.viewerNames.length > 0">
-            <strong>Playtesters</strong>
+            <strong translate="I18N_SETTINGS_TAB_PLAYTESTERS">Playtesters</strong>
             <ul>
               <li ng-repeat="viewerName in explorationRightsService.viewerNames track by $index">
                 <[viewerName]>
@@ -260,26 +260,26 @@
             </div>
 
             <div ng-show="isRolesFormOpen">
-              <strong>Add or Change Role</strong>
+              <strong translate="I18N_SETTINGS_TAB_ADD_CHANGE_ROLE">Add or Change Role</strong>
               <div class="form-group">
                 <form ng-submit="editRole(newMemberUsername, newMemberRole.value)">
-                  <label for="newMemberUsername">Username of invited user</label>
+                  <label for="newMemberUsername" translate="I18N_SETTINGS_TAB_INVITED_USER_USERNAME">Username of invited user</label>
                   <div>
                     <input type="text" id="newMemberUsername" class="form-control protractor-test-role-username" ng-model="newMemberUsername" placeholder="{{username}}">
                   </div>
                   <br>
-                  <label for="newMemberRole">Role of invited user</label>
+                  <label for="newMemberRole" translate="I18N_SETTINGS_TAB_INVITED_USER_ROLE">Role of invited user</label>
                   <div>
                     <select ng-model="newMemberRole" class="form-control protractor-test-role-select" ng-options="r.name for r in ROLES" style="width: 250px;">
                     </select>
-                    <span class="help-block">
+                    <span class="help-block" translate="I18N_SETTINGS_TAB_ROLE_NOTE">
                       Note that managers also have the permissions of collaborators, and collaborators also have the permissions of viewers. Please note that assigning roles is irreversible (though you can always assign somebody to a higher role).
                     </span>
                   </div>
 
                   <input type="submit" class="btn btn-default protractor-test-save-role" value="Save">
                   <button type="button" class="btn btn-default" ng-click="closeEditRolesForm()"
-                    ng-show="isRolesFormOpen">
+                    ng-show="isRolesFormOpen"  translate="I18N_STATE_EDITOR_CONTENT_CANCEL">
                     Cancel
                   </button>
                 </form>
@@ -289,29 +289,29 @@
         </div>
 
         <div class="col-lg-7 col-md-7 col-sm-7">
-          <h3>Permissions</h3>
-          <p ng-if="explorationRightsService.isPrivate() &&explorationRightsService.viewableIfPrivate()">
+          <h3 translate="I18N_SETTINGS_TAB_PERMISSIONS">Permissions</h3>
+          <p ng-if="explorationRightsService.isPrivate() &&explorationRightsService.viewableIfPrivate()" translate="I18N_SETTINGS_TAB_PERMISSIONS_LINK_PRIVATE">
             This exploration is <strong>private</strong>. Anyone with the link can access it.
           </p>
-          <p ng-if="explorationRightsService.isPrivate() &&!explorationRightsService.viewableIfPrivate()">
+          <p ng-if="explorationRightsService.isPrivate() &&!explorationRightsService.viewableIfPrivate()" translate="I18N_SETTINGS_TAB_PERMISSIONS_PRIVATE">
             This exploration is <strong>private</strong>. Only invited users, moderators and site admins can
             access it.
           </p>
-          <p ng-if="!explorationRightsService.isPrivate()">
+          <p ng-if="!explorationRightsService.isPrivate()" translate="I18N_SETTINGS_TAB_PERMISSIONS_PUBLIC">
             This exploration is <strong>public</strong>: anyone can access it.
           </p>
 
           <p ng-if="!explorationRightsService.isPrivate() || explorationRightsService.viewableIfPrivate()">
-            <em>Link to share:</em>
+            <em translate="I18N_SETTINGS_TAB_LINK">Link to share:</em>
             <input class="form-control" type="text" value="<[getExplorePageUrl(explorationId)]>" readonly="readonly" onClick="this.select();">
           </p>
 
           <br>
 
-          <p ng-if="explorationRightsService.isPrivate()">
+          <p ng-if="explorationRightsService.isPrivate()" translate="I18N_SETTINGS_TAB_NOT_SHOWN">
             It is <strong>not shown</strong> in the Oppia library.
           </p>
-          <p ng-if="!explorationRightsService.isPrivate()">
+          <p ng-if="!explorationRightsService.isPrivate()" translate="I18N_SETTINGS_TABT_SHOWN">
             It is <strong>available</strong> in the Oppia library.
           </p>
         </div>
@@ -319,8 +319,8 @@
     </div>
 
     <div ng-if="explorationRightsService.ownerNames.length === 0 && !explorationRightsService.isCloned()">
-      <h3>Permissions</h3>
-      <div>
+      <h3 translate="I18N_SETTINGS_TAB_PERMISSIONS">Permissions</h3>
+      <div translate="I18N_SETTINGS_TAB_PERMISSIONS_PUBLIC">
         This exploration is <strong>public</strong> and <strong>community-editable</strong>.
         <p ng-if="!explorationRightsService.isPrivate()">
           It is <strong>available</strong> in the Oppia library.
@@ -329,38 +329,38 @@
     </div>
 
     <div ng-if="explorationRightsService.isCloned()">
-      <h3>Status</h3>
-      <div>
+      <h3 translate="I18N_SETTINGS_TAB_STATUS">Status</h3>
+      <div translate="I18N_SETTINGS_TAB_STATUS_CLONED">
         This exploration was <strong>cloned</strong> from another exploration.
       </div>
     </div>
   </md-card>
 
   <md-card class="oppia-editor-card">
-    <h3>Feedback/Suggestion Email Preferences</h3>
+    <h3 translate="I18N_SETTINGS_TAB_FEEDBACK">Feedback/Suggestion Email Preferences</h3>
     <div class="row">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div role="form" class="form-horizontal">
-            <label for="FeedbackNotifications" class="col-lg-3 col-md-3 col-sm-3">
+            <label for="FeedbackNotifications" class="col-lg-3 col-md-3 col-sm-3" translate="I18N_SETTINGS_TAB_FEEDBACK_EMAILS">
               Feedback emails
             </label>
             <span class="col-lg-2 col-md-2 col-sm-2">
               <button type="button" class="btn btn-default protractor-test-enable-fallbacks"
-                      ng-click="muteFeedbackNotifications()" ng-if="!UserEmailPreferencesService.areFeedbackNotificationsMuted()">
+                      ng-click="muteFeedbackNotifications()" ng-if="!UserEmailPreferencesService.areFeedbackNotificationsMuted()" translate="I18N_SETTINGS_TAB_FEEDBACK_MUTE">
                  Mute
               </button>
               <button type="button" class="btn btn-default protractor-test-enable-fallbacks"
-                      ng-click="unmuteFeedbackNotifications()" ng-if="UserEmailPreferencesService.areFeedbackNotificationsMuted()">
+                      ng-click="unmuteFeedbackNotifications()" ng-if="UserEmailPreferencesService.areFeedbackNotificationsMuted()" translate="I18N_SETTINGS_TAB_FEEDBACK_UNMUTE">
                  Unmute
               </button>
             </span>
             <span class="col-lg-7 col-md-7 col-sm-7 help-block" style="font-size: smaller;"
-                  ng-if="!UserEmailPreferencesService.areFeedbackNotificationsMuted()">
+                  ng-if="!UserEmailPreferencesService.areFeedbackNotificationsMuted()" translate="I18N_SETTINGS_TAB_FEEDBACK_UNMUTED">
               You are currently receiving notifications of new feedback for this exploration.
             </span>
             <span class="col-lg-7 col-md-7 col-sm-7 help-block" style="font-size: smaller;"
-                  ng-if="UserEmailPreferencesService.areFeedbackNotificationsMuted()">
+                  ng-if="UserEmailPreferencesService.areFeedbackNotificationsMuted()" translate="I18N_SETTINGS_TAB_FEEDBACK_MUTED">
               You have muted feedback notifications for this exploration. You will not receive an email when new feedback is submitted.
             </span>
           </div>
@@ -370,25 +370,25 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div role="form" class="form-horizontal">
-            <label for="SuggestionNotifications" class="col-lg-3 col-md-3 col-sm-3">
+            <label for="SuggestionNotifications" class="col-lg-3 col-md-3 col-sm-3" translate="I18N_SETTINGS_TAB_SUGGESTION_EMAILS">
               Suggestion emails
             </label>
             <span class="col-lg-2 col-md-2 col-sm-2">
               <button type="button" class="btn btn-default protractor-test-enable-fallbacks"
-                      ng-click="muteSuggestionNotifications()" ng-if="!UserEmailPreferencesService.areSuggestionNotificationsMuted()">
+                      ng-click="muteSuggestionNotifications()" ng-if="!UserEmailPreferencesService.areSuggestionNotificationsMuted()" translate="I18N_SETTINGS_TAB_FEEDBACK_MUTE">
                  Mute
               </button>
               <button type="button" class="btn btn-default protractor-test-enable-fallbacks"
-                      ng-click="unmuteSuggestionNotifications()" ng-if="UserEmailPreferencesService.areSuggestionNotificationsMuted()">
+                      ng-click="unmuteSuggestionNotifications()" ng-if="UserEmailPreferencesService.areSuggestionNotificationsMuted()" translate="I18N_SETTINGS_TAB_FEEDBACK_UNMUTE">
                  Unmute
               </button>
             </span>
             <span class="col-lg-7 col-md-7 col-sm-7 help-block" style="font-size: smaller;"
-                  ng-if="!UserEmailPreferencesService.areSuggestionNotificationsMuted()">
+                  ng-if="!UserEmailPreferencesService.areSuggestionNotificationsMuted()" translate="I18N_SETTINGS_TAB_SUGGESTION_UNMUTED">
               You are currently receiving notifications of new suggestions for this exploration.
             </span>
             <span class="col-lg-7 col-md-7 col-sm-7 help-block" style="font-size: smaller;"
-                  ng-if="UserEmailPreferencesService.areSuggestionNotificationsMuted()">
+                  ng-if="UserEmailPreferencesService.areSuggestionNotificationsMuted()" translate="I18N_SETTINGS_TAB_SUGGESTION_MUTED">
               You have muted suggestion notifications for this exploration. You will not receive an email when new suggestion is submitted.
             </span>
           </div>
@@ -400,9 +400,9 @@
   <md-card class="oppia-editor-card" ng-if="editabilityService.isEditable()">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6">
-        <h3>Controls</h3>
+        <h3 translate="I18N_SETTINGS_TAB_CONTROLS">Controls</h3>
 
-        {% if can_release_ownership %}
+<!--         {% if can_release_ownership %}
           <p class="oppia-exploration-ctrl" ng-hide="explorationRightsService.isCommunityOwned()">
             <button type="button" class="btn btn-default" ng-click="showTransferExplorationOwnershipModal()" ng-disabled="isExplorationLockedForEditing()">
               Transfer ownership to the community
@@ -412,13 +412,14 @@
               Please save your changes first.
             </span>
           </p>
-        {% endif %}
+        {% endif %} -->
 
         {% if can_delete %}
           <p class="oppia-exploration-ctrl">
             <button type="button" ng-if="explorationRightsService.isPrivate()"
                     class="btn btn-danger" ng-click="deleteExploration('')"
-                    title="Delete this exploration">
+                    title="Удалить исследование"
+                    translate="I18N_SETTINGS_TAB_DELETE">
               Delete Exploration
             </button>
           </p>
@@ -426,7 +427,7 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6" ng-if="currentUserIsAdmin || currentUserIsModerator">
-        <h3>Admin Controls</h3>
+        <h3 translate="I18N_SETTINGS_TAB_ADMIN_CONTROLS">Admin Controls</h3>
 
         {% if can_publicize %}
           <p class="oppia-exploration-ctrl oppia-exploration-ctrl-admin" ng-show="explorationRightsService.isPublic()">

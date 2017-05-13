@@ -13,7 +13,7 @@
         </span>
       </div>
       <ul class="dropdown-menu oppia-editor-warnings-box">
-        <span class="oppia-editor-warnings-header">Warnings</span>
+        <span class="oppia-editor-warnings-header" translate="I18N_COLLECTION_EDITOR_NAVBAR_DIRECTIVE_WARNINGS">Warnings</span>
         <li class="oppia-editor-warnings-text"
             ng-repeat="issue in validationIssues track by $index">
           <hr class="oppia-editor-warnings-separator">
@@ -65,7 +65,7 @@
           <span ng-if="isPrivate">
             <i class="material-icons md-18 md-dark oppia-save-publish-button-icon"
                alt="Save Collection">&#xE161;</i>
-            <span class="oppia-save-publish-button-label">Save Draft</span>
+            <span class="oppia-save-publish-button-label" translate="I18N_EXPLORATION_SAVE_DRAFT">Save Draft</span>
             <span class="hidden-sm hidden-xs" style="opacity: 0.5"
                   ng-if="getChangeListCount() > 0">
               (<[getChangeListCount()]>)
@@ -74,13 +74,13 @@
           <span ng-if="!isPrivate" title="Publish Changes">
             <i class="material-icons md-18 md-dark oppia-save-publish-button-icon"
                alt="Publish Changes">&#xE2C3;</i>
-            <span class="oppia-save-publish-button-label">Publish Changes</span>
+            <span class="oppia-save-publish-button-label" translate="I18N_EXPLORATION_PUBLISH_CHANGES">Publish Changes</span>
           </span>
         </span>
 
         <span ng-if="isSaveInProgress()">
-          <span ng-if="isPrivate" class="oppia-save-publish-button-label">Saving</span>
-          <span ng-if="!isPrivate" class="oppia-save-publish-button-label">Publishing</span>
+          <span ng-if="isPrivate" class="oppia-save-publish-button-label" translate="I18N_COLLECTION_EDITOR_NAVBAR_DIRECTIVE_SAVING">Saving</span>
+          <span ng-if="!isPrivate" class="oppia-save-publish-button-label" translate="I18N_COLLECTION_EDITOR_NAVBAR_DIRECTIVE_PUBLISHING">Publishing</span>
           <loading-dots></loading-dots>
         </span>
       </button>
@@ -92,12 +92,13 @@
               ng-disabled="!isCollectionPublishable()">
         <i class="material-icons md-18 md-dark oppia-save-publish-button-icon"
            alt="Publish to Oppia Library">&#xE2C3;</i>
-        <span class="oppia-save-publish-button-label">Publish</span>
+        <span class="oppia-save-publish-button-label" translate="I18N_COLLECTION_EDITOR_NAVBAR_DIRECTIVE_PUBLISH">Publish</span>
       </button>
 
       <button type="button" ng-click="unpublishCollection()"
               ng-if="!isPrivate && canUnpublish"
-              class="btn btn-default">
+              class="btn btn-default"
+              translate="I18N_COLLECTION_EDITOR_NAVBAR_DIRECTIVE_UNPUBLISH">
         Unpublish (as moderator)
       </button>
     </li>

@@ -25,7 +25,7 @@ oppia.directive('searchResults', [function() {
       'UrlInterpolationService',
       function($scope, $rootScope, $timeout, $window, siteAnalyticsService,
         UrlInterpolationService) {
-        $rootScope.loadingMessage = 'Loading';
+        $rootScope.loadingMessage = 'Загрузка';
         $scope.someResultsExist = true;
 
         // Called when the first batch of search results is retrieved from the

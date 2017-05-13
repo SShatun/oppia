@@ -23,7 +23,7 @@ oppia.controller('Preferences', [
       $scope, $http, $rootScope, $modal, $timeout, $translate, alertsService,
       UrlInterpolationService, utilsService) {
     var _PREFERENCES_DATA_URL = '/preferenceshandler/data';
-    $rootScope.loadingMessage = 'Loading';
+    $rootScope.loadingMessage = 'Загрузка';
     $scope.profilePictureDataUrl = '';
 
     $scope.getStaticImageUrl = UrlInterpolationService.getStaticImageUrl;

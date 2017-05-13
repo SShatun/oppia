@@ -35,7 +35,7 @@ oppia.controller('DashboardNotifications', [
       millisSinceEpoch);
   };
 
-  $rootScope.loadingMessage = 'Loading';
+  $rootScope.loadingMessage = 'Загрузка';
   $http.get('/notificationsdashboardhandler/data').then(function(response) {
     var data = response.data;
     $scope.recentNotifications = data.recent_notifications;

@@ -181,7 +181,7 @@ oppia.controller('Dashboard', [
       return topUnresolvedAnswersCount;
     };
 
-    $rootScope.loadingMessage = 'Loading';
+    $rootScope.loadingMessage = 'Загрузка';
     DashboardBackendApiService.fetchDashboardData().then(
       function(response) {
         var responseData = response.data;

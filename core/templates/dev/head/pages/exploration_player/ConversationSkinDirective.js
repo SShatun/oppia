@@ -275,7 +275,7 @@ oppia.directive('conversationSkin', ['urlService', function(urlService) {
         $scope.explorationId = oppiaPlayerService.getExplorationId();
         $scope.isInPreviewMode = oppiaPlayerService.isInPreviewMode();
         $scope.isIframed = urlService.isIframed();
-        $rootScope.loadingMessage = 'Loading';
+        $rootScope.loadingMessage = 'Загрузка';
         $scope.hasFullyLoaded = false;
         $scope.recommendedExplorationSummaries = [];
 

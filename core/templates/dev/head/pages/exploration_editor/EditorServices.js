@@ -2047,7 +2047,7 @@ oppia.factory('explorationWarningsService', [
         _warningsList.push({
           type: WARNING_TYPES.ERROR,
           message: (
-            'The following states have errors: ' +
+            'Найдены ошибки в следующих пунктах: ' +
             Object.keys(stateWarnings).join(', ') + '.')
         });
       };
