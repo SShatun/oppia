@@ -81,7 +81,7 @@
     <!-- Do not show this button if an interaction is already selected. -->
     <button class="btn btn-default" style="float: left;" ng-click="returnToInteractionSelector()" ng-if="stateInteractionIdService.displayed && !stateInteractionIdService.savedMemento" translate="I18N_EDITOR_INTERACTION_CHANGE_INTERACTION">Change Interaction</button>
 
-    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-default" ng-click="cancel()" translate="I18N_STATE_EDITOR_CONTENT_CANCEL" >Cancel</button>
     <button class="btn btn-success protractor-test-save-interaction" ng-click="save()"
             ng-disabled="!stateInteractionIdService.displayed || form.schemaForm.$invalid"
             translate="I18N_EDITOR_INTERACTION_SAVE_INTERACTION">

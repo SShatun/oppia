@@ -372,7 +372,7 @@ ANSWER_CLASSIFIER_CLASS_IDS = [
 # These categories and interactions are displayed in the order in which they
 # appear in the interaction selector.
 ALLOWED_INTERACTION_CATEGORIES = [{
-    'name': 'General',
+    'name': 'Общее',
     'interaction_ids': [
         'Continue',
         'EndExploration',
@@ -382,7 +382,7 @@ ALLOWED_INTERACTION_CATEGORIES = [{
         'TextInput'
     ],
 }, {
-    'name': 'Math',
+    'name': 'Математика',
     'interaction_ids': [
         'GraphInput',
         'LogicProof',
@@ -391,18 +391,18 @@ ALLOWED_INTERACTION_CATEGORIES = [{
         'MathExpressionInput',
     ]
 }, {
-    'name': 'Programming',
+    'name': 'Программирование',
     'interaction_ids': [
-        'CodeRepl',
+        # 'CodeRepl',
         'PencilCodeEditor',
     ],
 }, {
-    'name': 'Music',
+    'name': 'Музыка',
     'interaction_ids': [
         'MusicNotesInput'
     ],
 }, {
-    'name': 'Geography',
+    'name': 'География',
     'interaction_ids': [
         'InteractiveMap'
     ],

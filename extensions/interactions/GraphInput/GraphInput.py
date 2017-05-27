@@ -20,19 +20,19 @@ from extensions.interactions import base
 class GraphInput(base.BaseInteraction):
     """Interaction for evaluating graphs."""
 
-    name = 'Graph Theory'
-    description = 'Allows learners to create and manipulate graphs.'
+    name = 'Теория графов'
+    description = 'Позволяет учащимся создавать и манипулировать графами.'
     display_mode = base.DISPLAY_MODE_SUPPLEMENTAL
     is_trainable = False
     _dependency_ids = []
-    answer_type = 'Graph'
-    instructions = 'Create a graph'
-    narrow_instructions = 'View graph'
+    answer_type = 'Граф'
+    instructions = 'Создать граф'
+    narrow_instructions = 'Показать граф'
     needs_summary = True
 
     _customization_arg_specs = [{
         'name': 'graph',
-        'description': 'Initial graph',
+        'description': 'Начальный граф',
         'schema': {
             'type': 'custom',
             'obj_type': 'Graph',
@@ -66,49 +66,49 @@ class GraphInput(base.BaseInteraction):
         }
     }, {
         'name': 'canAddVertex',
-        'description': 'Allow learner to add vertices',
+        'description': 'Разрешить ученику добавлять вершины',
         'schema': {
             'type': 'bool',
         },
         'default_value': False
     }, {
         'name': 'canDeleteVertex',
-        'description': 'Allow learner to delete vertices',
+        'description': 'Разрешить ученику удалять вершины',
         'schema': {
             'type': 'bool',
         },
         'default_value': False
     }, {
         'name': 'canMoveVertex',
-        'description': 'Allow learner to move vertices',
+        'description': 'Разрешить ученику передвигать вершины',
         'schema': {
             'type': 'bool',
         },
         'default_value': True
     }, {
         'name': 'canEditVertexLabel',
-        'description': 'Allow learner to edit vertex labels',
+        'description': 'Разрешить учащимся редактировать метки вершинs',
         'schema': {
             'type': 'bool',
         },
         'default_value': False
     }, {
         'name': 'canAddEdge',
-        'description': 'Allow learner to add edges',
+        'description': 'Разрешить учащемуся добавлять ребра',
         'schema': {
             'type': 'bool',
         },
         'default_value': True
     }, {
         'name': 'canDeleteEdge',
-        'description': 'Allow learner to delete edges',
+        'description': 'Разрешить учащемуся удалять ребра',
         'schema': {
             'type': 'bool',
         },
         'default_value': True
     }, {
         'name': 'canEditEdgeWeight',
-        'description': 'Allow learner to edit edge weights',
+        'description': 'Разрешить учащемуся редактировать ребра',
         'schema': {
             'type': 'bool',
         },

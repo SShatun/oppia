@@ -20,21 +20,21 @@ from extensions.interactions import base
 class Continue(base.BaseInteraction):
     """Interaction that takes the form of a simple 'Continue' button."""
 
-    name = 'Continue Button'
-    description = 'A simple \'go to next state\' button.'
+    name = 'Кнопка продолжить'
+    description = 'Просто перейти к следующему'
     display_mode = base.DISPLAY_MODE_INLINE
     _dependency_ids = []
     is_linear = True
     instructions = None
     narrow_instructions = None
     needs_summary = False
-    default_outcome_heading = 'When the button is clicked'
+    default_outcome_heading = 'Когда кнопка нажата'
 
     _customization_arg_specs = [{
         'name': 'buttonText',
-        'description': 'Button label',
+        'description': 'Надпись',
         'schema': {
             'type': 'unicode',
         },
-        'default_value': 'Continue',
+        'default_value': 'Продолжить',
     }]

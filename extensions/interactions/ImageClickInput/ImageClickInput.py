@@ -20,18 +20,18 @@ from extensions.interactions import base
 class ImageClickInput(base.BaseInteraction):
     """Interaction allowing multiple-choice selection on an image."""
 
-    name = 'Image Region'
-    description = 'Allows learners to click on regions of an image.'
+    name = 'Область изобржения'
+    description = 'Позволяет учащимся выбирать области изображения.'
     display_mode = base.DISPLAY_MODE_SUPPLEMENTAL
     _dependency_ids = []
     answer_type = 'ClickOnImage'
-    instructions = 'Click on the image'
-    narrow_instructions = 'View image'
+    instructions = 'Нажать на изображение'
+    narrow_instructions = 'Показать изображение'
     needs_summary = False
 
     _customization_arg_specs = [{
         'name': 'imageAndRegions',
-        'description': 'Image',
+        'description': 'Изображение',
         'schema': {
             'type': 'custom',
             'obj_type': 'ImageWithRegions',
@@ -42,7 +42,7 @@ class ImageClickInput(base.BaseInteraction):
         },
     }, {
         'name': 'highlightRegionsOnHover',
-        'description': 'Highlight regions when the learner hovers over them',
+        'description': 'Выделять область, когда ученик наводит на нее курсор',
         'schema': {
             'type': 'bool',
         },

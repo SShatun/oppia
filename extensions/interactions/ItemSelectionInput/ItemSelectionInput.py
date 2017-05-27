@@ -20,7 +20,7 @@ from extensions.interactions import base
 class ItemSelectionInput(base.BaseInteraction):
     """Interaction for item selection input."""
 
-    name = 'Item Selection'
+    name = 'Выбор пункта'
     description = (
         'Allows learners to select various options.')
     display_mode = base.DISPLAY_MODE_INLINE

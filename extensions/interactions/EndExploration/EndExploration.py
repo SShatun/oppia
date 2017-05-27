@@ -25,10 +25,10 @@ class EndExploration(base.BaseInteraction):
     containing it.
     """
 
-    name = 'End Exploration'
+    name = 'Закончить урок'
     description = (
-        'Ends the exploration, and suggests recommendations for explorations '
-        'to try next.')
+        'Заканчивает урок, и предлагает рекомендации '
+        'следующий урок.')
     display_mode = base.DISPLAY_MODE_INLINE
     is_terminal = True
     _dependency_ids = []
@@ -39,16 +39,16 @@ class EndExploration(base.BaseInteraction):
     _customization_arg_specs = [{
         'name': 'recommendedExplorationIds',
         'description': (
-            'IDs of explorations to recommend to the learner (at most 3 are '
-            'shown). The ID of an exploration is the string of characters '
-            'appearing after \'/explore/\' in the URL bar.'),
+           ' Идентификаторы исследований, рекомендуемых учащемуся (не более 3).'
+           ' Идентификатором исследования является строка символов,' 
+           ' появляющаяся после \'/ expl /\' на панели URL.'),
         'schema': {
             'type': 'list',
             'items': {
                 'type': 'unicode',
             },
             'ui_config': {
-                'add_element_text': 'Add exploration ID',
+                'add_element_text': 'Добавить ID урока',
             }
         },
         'default_value': [],
