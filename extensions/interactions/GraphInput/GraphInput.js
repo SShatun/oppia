@@ -316,15 +316,15 @@ oppia.directive('graphViz', function() {
         };
 
         $scope.graphOptions = [{
-          text: 'Labeled',
+          text: 'Маркер',
           option: 'isLabeled'
         },
         {
-          text: 'Directed',
+          text: 'Направление',
           option: 'isDirected'
         },
         {
-          text: 'Weighted',
+          text: 'Вес',
           option: 'isWeighted'
         }];
         $scope.toggleGraphOption = function(option) {

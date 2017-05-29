@@ -1,15 +1,15 @@
 <div>
   <p>
-    Formulas the student can assume (separated by commas):<br>
-    <input type="text" ng-model="localValue.assumptionsString" ng-trim="false" placeholder="Enter a list of formulas." id="logicQuestionAssumptions" ng-change="changeAssumptions()">
+    <span translate="I18N_LOGIC_QUESTION_EDITOR_FORMULAS_CAN_ASSUME"> Formulas the student can assume (separated by commas): </span><br>
+    <input type="text" ng-model="localValue.assumptionsString" ng-trim="false" id="logicQuestionAssumptions" ng-change="changeAssumptions()">
   </p>
   <p>
-    Formula the student must prove:<br>
-    <input type="text" ng-model="localValue.targetString" ng-trim="false" placeholder="Enter a formula." id="logicQuestionTarget" ng-change="changeTarget()">
+    <span translate="I18N_LOGIC_QUESTION_EDITOR_FORMULA_MUST_PROVE">Formula the student must prove:</span><br>
+    <input type="text" ng-model="localValue.targetString" ng-trim="false" id="logicQuestionTarget" ng-change="changeTarget()">
   </p>
   <p>
    <div class="logic-proof-mistake-message"><[localValue.errorMessage]></div>
-  </p>
-  Default proof (optional):<br>
-  <textarea ng-model="localValue.proofString" ng-trim="false" placeholder="If this is an example, enter a proof." id="logicQuestionProof" ng-change="changeProof()"></textarea>
+  </p >
+  <span translate="I18N_LOGIC_QUESTION_EDITOR_DEFAULT_PROOF"> Default proof (optional): </span> <br>
+  <textarea ng-model="localValue.proofString" ng-trim="false" id="logicQuestionProof" ng-change="changeProof()"></textarea>
 </div>

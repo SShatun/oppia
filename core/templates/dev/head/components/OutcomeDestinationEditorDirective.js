@@ -65,7 +65,7 @@ oppia.directive('outcomeDestinationEditor', [function() {
           // new state.
           $scope.destChoices = [{
             id: currentStateName,
-            text: '(try again)'
+            text: '(попробовать снова)'
           }];
 
           // Arrange the remaining states based on their order in the state
@@ -117,7 +117,7 @@ oppia.directive('outcomeDestinationEditor', [function() {
 
           $scope.destChoices.push({
             id: PLACEHOLDER_OUTCOME_DEST,
-            text: 'A New Card Called...'
+            text: 'Новый урок, с именем...'
           });
         }, true);
       }

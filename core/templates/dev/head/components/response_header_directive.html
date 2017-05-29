@@ -17,10 +17,10 @@
     </span>
     <span ng-if="!isOutcomeLooping() && isCreatingNewState()">
       <em ng-if="getOutcome().newStateName">(<[getOutcome().newStateName]>)</em>
-      <em ng-if="!getOutcome().newStateName">Nowhere yet...</em>
+      <em ng-if="!getOutcome().newStateName" translate="I18N_OUTCOME_EDITOR_DIRECTIVE_NOWHERE_YET">Nowhere yet...</em>
     </span>
     <span ng-if="isOutcomeLooping()">
-      <em>(try again)</em>
+      <em translate="I18N_OUTCOME_EDITOR_DIRECTIVE_TRY_AGAIN">(try again)</em>
     </span>
   </div>
 

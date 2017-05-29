@@ -22,14 +22,14 @@ class ItemSelectionInput(base.BaseInteraction):
 
     name = 'Выбор пункта'
     description = (
-        'Allows learners to select various options.')
+        'Позволяет учащимся выбирать различные варианты.')
     display_mode = base.DISPLAY_MODE_INLINE
     _dependency_ids = []
     answer_type = 'SetOfHtmlString'
 
     _customization_arg_specs = [{
         'name': 'minAllowableSelectionCount',
-        'description': 'Minimum number of selections permitted.',
+        'description': 'Допустимое минимальное количество выборов',
         'schema': {
             'type': 'int',
             'validators': [{
@@ -40,7 +40,7 @@ class ItemSelectionInput(base.BaseInteraction):
         'default_value': 1,
     }, {
         'name': 'maxAllowableSelectionCount',
-        'description': 'Maximum number of selections permitted',
+        'description': 'Допустимое максимальное количество выборов',
         'schema': {
             'type': 'int',
             'validators': [{
@@ -51,18 +51,18 @@ class ItemSelectionInput(base.BaseInteraction):
         'default_value': 1,
     }, {
         'name': 'choices',
-        'description': 'Items for selection',
+        'description': 'Элементы для выбора',
         'schema': {
             'type': 'list',
             'items': {
                 'type': 'html',
                 'ui_config': {
                     'hide_complex_extensions': True,
-                    'placeholder': 'Sample item answer',
+                    'placeholder': 'Пример ответа',
                 },
             },
             'ui_config': {
-                'add_element_text': 'Add item for selection',
+                'add_element_text': 'Добавить элемент для выбора',
             }
         },
         'default_value': [''],

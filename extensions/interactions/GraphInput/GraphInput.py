@@ -87,7 +87,7 @@ class GraphInput(base.BaseInteraction):
         'default_value': True
     }, {
         'name': 'canEditVertexLabel',
-        'description': 'Разрешить учащимся редактировать метки вершинs',
+        'description': 'Разрешить учащимся редактировать метки вершин',
         'schema': {
             'type': 'bool',
         },

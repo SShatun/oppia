@@ -12,17 +12,17 @@
           </i>
         </div>
 
-        <strong>Oppia tells the learner...</strong>
+        <strong translate="I18N_EDITOR_RESPONSES_REPLY">Oppia tells the learner...</strong>
         <div style="position: relative;">
           <span ng-if="isSelfLoopWithNoFeedback(outcome) && !suppressWarnings()">
             <span class="oppia-confusing-outcome-warning-text">
-              <i class="material-icons">&#xE002;</i>
-              Please give Oppia something useful to say here.
+              <i class="material-icons" >&#xE002;</i>
+              <span translate="I18N_OUTCOME_EDITOR_DIRECTIVE_SOMETHING_USEFUL">Please give Oppia something useful to say here.
             </span>
           </span>
           <span ng-if="(!isSelfLoopWithNoFeedback(outcome) && outcome.feedback.length === 0) || (isSelfLoopWithNoFeedback(outcome) && suppressWarnings())"
                 style="color: #888">
-            <em>Nothing</em>
+            <em translate="I18N_OUTCOME_EDITOR_DIRECTIVE_NOTHING">Nothing</em>
           </span>
           <span ng-if="outcome.feedback.length > 0" style="word-wrap: break-word;">
             <span angular-html-bind="outcome.feedback[0]"></span>
@@ -46,13 +46,15 @@
       <div class="pull-right">
         <button type="button"
                 class="btn btn-default"
-                ng-click="cancelThisFeedbackEdit()">
+                ng-click="cancelThisFeedbackEdit()"
+                translate="I18N_STATE_EDITOR_CONTENT_CANCEL">
           Cancel
         </button>
         <button type="button"
                 class="btn btn-success protractor-test-save-outcome-feedback"
                 ng-disabled="invalidStateAfterFeedbackSave() || editOutcomeForm.editFeedbackForm.$invalid"
-                ng-click="saveThisFeedback()">
+                ng-click="saveThisFeedback()"
+                translate="I18N_STATE_EDITOR_CONTENT_SAVE_CONTENT">
           Save Feedback
         </button>
       </div>
@@ -77,13 +79,12 @@
         </div>
 
         <div ng-if="outcome.dest !== getActiveStateName()">
-          <strong ng-if="displayFeedback">And afterwards, directs the learner
-          to...</strong>
-          <strong ng-if="!displayFeedback">Oppia directs the learner to...</strong>
+          <strong ng-if="displayFeedback" translate="I18N_OUTCOME_EDITOR_DIRECTIVE_DIRECTS">And afterwards, directs the learner to...</strong>
+          <strong ng-if="!displayFeedback" translate="I18N_OUTCOME_EDITOR_DIRECTIVE_DIRECT">Oppia directs the learner to...</strong>
           <span ng-if="!isSelfLoop(outcome)" style="position: relative;">
             <[outcome.dest]>
           </span>
-          <span ng-if="isSelfLoop(outcome)" style="position: relative;">
+          <span ng-if="isSelfLoop(outcome)" style="position: relative;" translate="I18N_OUTCOME_EDITOR_DIRECTIVE_TRY_AGAIN">
             (try again)
           </span>
         </div>
@@ -104,13 +105,15 @@
       <div class="pull-right">
         <button type="button"
                 class="btn btn-default protractor-test-cancel-outcome-dest"
-                ng-click="cancelThisDestinationEdit()">
+                ng-click="cancelThisDestinationEdit()"
+                translate="I18N_STATE_EDITOR_CONTENT_CANCEL">
           Cancel
         </button>
         <button type="button"
                 class="btn btn-success protractor-test-save-outcome-dest"
                 ng-disabled="invalidStateAfterDestinationSave() || editOutcomeForm.editDestForm.$invalid"
-                ng-click="saveThisDestination()">
+                ng-click="saveThisDestination()"
+                translate="I18N_STATE_EDITOR_CONTENT_SAVE_CONTENT">
           Save Destination
         </button>
       </div>

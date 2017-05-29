@@ -20,8 +20,8 @@ from extensions.interactions import base
 class MathExpressionInput(base.BaseInteraction):
     """Interaction for math expression input."""
 
-    name = 'Math Expression Input'
-    description = 'Allows learners to enter mathematical expressions.'
+    name = 'Математические выражения'
+    description = 'Позволяет учащимся вводить математические выражения'
     display_mode = base.DISPLAY_MODE_INLINE
     is_trainable = False
     _dependency_ids = ['guppy', 'math_expressions']

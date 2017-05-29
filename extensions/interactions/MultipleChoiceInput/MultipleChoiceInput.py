@@ -22,7 +22,7 @@ class MultipleChoiceInput(base.BaseInteraction):
 
     name = 'Mножественный выбор'
     description = (
-        'Allows learners to select one of a list of multiple-choice options.')
+        'Позволяет обучающимся выбрать несколько вариантами.')
     display_mode = base.DISPLAY_MODE_INLINE
     _dependency_ids = []
     answer_type = 'NonnegativeInt'
@@ -32,7 +32,7 @@ class MultipleChoiceInput(base.BaseInteraction):
 
     _customization_arg_specs = [{
         'name': 'choices',
-        'description': 'Multiple Choice options',
+        'description': 'Варианты множественного выбора',
         'schema': {
             'type': 'list',
             'validators': [{
@@ -43,11 +43,11 @@ class MultipleChoiceInput(base.BaseInteraction):
                 'type': 'html',
                 'ui_config': {
                     'hide_complex_extensions': True,
-                    'placeholder': 'Enter an option for the learner to select',
+                    'placeholder': 'Введите варианты для выбора',
                 },
             },
             'ui_config': {
-                'add_element_text': 'Add multiple choice option',
+                'add_element_text': 'Добавить пункт выбора',
             }
         },
         'default_value': [''],
